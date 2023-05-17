@@ -272,7 +272,7 @@ TextureImporter:
         width: 52
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -280,6 +280,27 @@ TextureImporter:
       bones: []
       spriteID: 921732ec394e043b2b09f5d7a8ca1b75
       internalID: 969707334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScoreBoard
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 8
+        width: 113
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ecc65b9a93d14464b8cd39f2f01c3ae
+      internalID: 1845050423
       vertices: []
       indices: 
       edges: []
@@ -295,6 +316,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      ScoreBoard: 1845050423
       io_flappy_sprite_0: 1526862065
       io_flappy_sprite_1: 876475421
       io_flappy_sprite_2: 1772478097

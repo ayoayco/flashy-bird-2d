@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject startButton;
     public Player player;
     public Text scoreText;
-    private double score;
+    private double score = 0;
     public Text gameOverCountdown;
     public float countTimer = 5;
     private bool stopScore = true;
@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     {
         gameOverCountdown.gameObject.SetActive(false);
         Time.timeScale = 0;
+        score = 0;
     }
 
     private void Update()
@@ -37,7 +38,7 @@ public class GameManager : MonoBehaviour
         }
 
         score++;
-        if (!stopScore) scoreText.text = "Time: " + score / 100;
+        if (!stopScore) scoreText.text = "" + (score / 500);
     }
 
     public void StartGame()
