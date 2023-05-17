@@ -9,10 +9,13 @@ public class GameManager : MonoBehaviour
     public GameObject startButton;
     public Player player;
     public Text scoreText;
-    private double score = 0;
+    public Text bestText;
     public Text gameOverCountdown;
     public float countTimer = 5;
     private bool stopScore = true;
+    private double score = 0;
+    private double best;
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +23,7 @@ public class GameManager : MonoBehaviour
         gameOverCountdown.gameObject.SetActive(false);
         Time.timeScale = 0;
         score = 0;
+
     }
 
     private void Update()
@@ -38,7 +42,8 @@ public class GameManager : MonoBehaviour
         }
 
         score++;
-        if (!stopScore) scoreText.text = "" + (score / 500);
+        if (!stopScore) scoreText.text = "" + (score / 100);
+        if (best > 0) bestText.text = "" + (best / 100);
     }
 
     public void StartGame()
@@ -52,6 +57,10 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0;
         stopScore = true;
+        if (score > best)
+        {
+            best = score; // TODO: persist in a file
+        }
     }
 
 
