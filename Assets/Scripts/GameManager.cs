@@ -8,9 +8,11 @@ public class GameManager : MonoBehaviour
 {
     public GameObject startButton;
     public Player player;
-
+    public Text scoreText;
+    private double score;
     public Text gameOverCountdown;
     public float countTimer = 5;
+    private bool stopScore = true;
 
     // Start is called before the first frame update
     void Start()
@@ -33,17 +35,22 @@ public class GameManager : MonoBehaviour
         {
             RestartGame();
         }
+
+        score++;
+        if (!stopScore) scoreText.text = "Time: " + score / 100;
     }
 
     public void StartGame()
     {
         startButton.SetActive(false);
         Time.timeScale = 1;
+        stopScore = false;
     }
 
     public void GameOver()
     {
         Time.timeScale = 0;
+        stopScore = true;
     }
 
 
